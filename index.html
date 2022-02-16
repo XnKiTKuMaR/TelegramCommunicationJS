@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>prototype</title>
+	<script type="text/javascript" src="renderjson.js"></script>
+	  <style>
+.renderjson a              { text-decoration: none; }
+.renderjson .disclosure    { color: crimson;
+                             font-size: 150%; }
+.renderjson .syntax        { color: black; }
+.renderjson .string        { color: green; }
+.renderjson .number        { color: black; }
+.renderjson .boolean       { color: black; }
+.renderjson .key           { color: blue; }
+.renderjson .keyword       { color: black; }
+.renderjson .object.syntax { color: black; }
+.renderjson .array.syntax  { color: black; }
+	  </style>
+  </head>
+  <body>
+
+	  <p style="display: inline-block;"  id="mtprotoresult">Connecting to server......</p>
+	  <p style="display: inline-block; color:gray;" id="DC1">DC1</p>
+	  <p style="display: inline-block; color:gray;" id="DC2">DC2</p>
+	  <p style="display: inline-block; color:gray;" id="DC3">DC3</p>
+	  <p style="display: inline-block; color:gray;" id="DC4">DC4</p>
+	  <p style="display: inline-block; color:gray;" id="DC5">DC5</p><br>	  
+	<div hidden id="phonelabel"><label>phone number</label><input type="text" id="phone">
+  		<button type="button" onClick="sendphonenum(document.getElementById('phone').value)">Send</button><br>
+	</div>
+	<div hidden id="codelabel"><label>SMS code</label><input type="text" id="code">
+  		<button type="button" onClick="sendcode(document.getElementById('code').value)">Send</button><br>
+	</div>
+	<div hidden id="getContacts" > 
+  		<!--button type="button" onClick="call_tl_func({0:{tl_constructor:{uint4:0xc4a353ee}}},get_contacts)">Get Contact List</button><br>
+		<button type="button" onClick="call_tl_func({0:{tl_constructor:{uint4:0x5717da40}}},logout)">LogOut</button><br-->
+	<select id="users_list" onchange="reset_history_forward()">
+	</select>
+		<button id="history" type="button" onClick="getHistory()">Get History</button>
+		<button id="resend" type="button" onClick="resendHistory()" disabled>ReSend</button>
+		<!--button type="button" onClick="sendHistory()">S. History</button-->
+		<button type="button" onClick="sendMessage()">S. test message</button>
+		<button type="button" onClick="sendSmile()">S. smile</button>
+		<button type="button" onClick="sendMedia()">S. media</button>
+		<button type="button" onClick="cv()">S. file</button>
+		<button type="button" onClick="getProfilePhoto()">Get Photo</button>
+		<button type="button" onClick="gsl()">S. Sticker</button>
+		<!--button type="button" onClick="getStickerSet()">GetStickerSet</button-->
+		<button type="button" onClick="clearlog()">ClearLog</button><br>
+		<div id="tgresult" style="padding:20px;overflow-y: auto;height: 80vh;display: inline-block;width:80vw;"></div><img style="vertical-align: top;display: inline-block;" id="myImg" src="">  
+	</div>
+  <script src="main.js"></script>
+  <script src="tlg.js"></script>
+
+	</body>
+</html>
